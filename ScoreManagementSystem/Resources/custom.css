@@ -1,0 +1,67 @@
+/* iCheck plugin Square skin, green
+----------------------------------- */
+.icheckbox_square-green,
+.iradio_square-green {
+    display: inline-block;
+    *display: inline;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    height: 14px;
+    width: 14px;
+    background: url(green1.png) no-repeat;
+    border: none;
+    cursor: pointer;
+    background-size:cover;
+    background-position: center;
+    text-align:center;
+    border: 1px solid #666666;
+}
+
+.icheckbox_square-green {
+    background-position: -48px 0;
+}
+/* .icheckbox_square-green.hover {
+    background-position: -24px 0;
+} */
+.icheckbox_square-green.checked {
+    background-position: 0 0;
+}
+.icheckbox_square-green.disabled {
+    background-position: -72px 0;
+    cursor: default;
+}
+.icheckbox_square-green.checked.disabled {
+    background-position: -96px 0;
+}
+
+.iradio_square-green {
+    background-position: 0 0;
+}
+/* .iradio_square-green.hover {
+    background-position: -144px 0;
+} */
+.iradio_square-green.checked {
+    background-position: -168px 0;
+}
+.iradio_square-green.disabled {
+    background-position: -192px 0;
+    cursor: default;
+}
+.iradio_square-green.checked.disabled {
+    background-position: -216px 0;
+}
+
+/* HiDPI support */
+@media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+    .icheckbox_square-green,
+    .iradio_square-green {
+        background-image: url(green1.png);
+        -webkit-background-size: 14px 14px;
+        background-size: 14px 14px;
+        position: relative;
+        height: 14px;
+        width: 14px;
+        border: 1px solid #666666;
+    }
+}

@@ -1,0 +1,46 @@
+h1,h3,p,a,button{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.onepage{
+    height: 750px;
+}
+.onepage-bg{
+    height: 800px;
+    width: 100%;
+    position: absolute;
+    background-position:center center ;
+    background-size: cover;
+}
+#onepagebg{
+    background-image: url("../img/background1.jpg");
+}
+.headh1content{
+    margin-top: 150px;
+    line-height: 75px;
+}
+.title-text{
+    margin-text:50px;
+}
+.headfontsize h1{
+    font-size: 50px;
+    color: #FFFFFF;
+}
+.headfontsize h3{
+    font-size: 30px;
+    color: #FFFFFF;
+}
+.headfontsize p{
+    color: #FFFFFF;
+    line-height: 33px;
+}
+.navbar-brand{
+    margin-right: 200px;
+}
+.navbar-header{
+    background-image: url("../img/logo2.png");
+    background-size: 200px;
+    background-repeat: no-repeat;
+}
+.navbar-collapse{
+    margin-top: 0px;
+}

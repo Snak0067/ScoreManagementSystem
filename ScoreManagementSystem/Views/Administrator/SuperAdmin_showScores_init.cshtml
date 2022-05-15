@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html class="app-ui">
+
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+
+    <!-- Document title -->
+    <title>高校成绩管理数据库系统</title>
+
+    <meta name="description" content="AppUI - Admin Dashboard Template & UI Framework"/>
+    <meta name="author" content="马晓峰"/>
+    <meta name="robots" content="noindex, nofollow"/>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="../../App_Themes/bootstrap/assets/img/favicons/apple-touch-icon.png"/>
+    <link rel="icon" href="../../App_Themes/bootstrap/assets/img/favicons/favicon.ico"/>
+
+    <!-- Google fonts -->
+    <link rel="stylesheet"
+          href="http://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,900%7CRoboto+Slab:300,400%7CRoboto+Mono:400"/>
+
+    <!-- Page JS Plugins CSS -->
+    <link rel="stylesheet" href="../../App_Themes/bootstrap/assets/js/plugins/slick/slick.min.css"/>
+    <link rel="stylesheet" href="../../App_Themes/bootstrap/assets/js/plugins/slick/slick-theme.min.css"/>
+
+    <!-- AppUI CSS stylesheets -->
+    <link rel="stylesheet" id="css-font-awesome" href="../../App_Themes/bootstrap/assets/css/font-awesome.css"/>
+    <link rel="stylesheet" id="css-ionicons" href="../../App_Themes/bootstrap/assets/css/ionicons.css"/>
+    <link rel="stylesheet" id="css-bootstrap" href="../../App_Themes/bootstrap/assets/css/bootstrap.css"/>
+    <link rel="stylesheet" id="css-app" href="../../App_Themes/bootstrap/assets/css/app.css"/>
+    <link rel="stylesheet" id="css-app-custom" href="../../App_Themes/bootstrap/assets/css/app-custom.css"/>
+    <!-- End Stylesheets -->
+</head>
+
+<body class="app-ui layout-has-drawer layout-has-fixed-header">
+<div class="app-layout-canvas">
+    <div class="app-layout-container">
+
+        <!-- Drawer -->
+        <aside class="app-layout-drawer">
+
+            <!-- Drawer scroll area -->
+            <div class="app-layout-drawer-scroll">
+                <!-- Drawer logo -->
+                <div id="logo" class="drawer-header">
+                    <a href="#"><img class="img-responsive" src="~/Img/logo.jpg" title="浙江工业大学" alt="浙江工业大学"/></a>
+                </div>
+
+                <!-- Drawer navigation -->
+                <nav class="drawer-main">
+                    <ul class="nav nav-drawer">
+                        <li class="nav-item nav-drawer-header">主页</li>
+                        <li class="nav-item active">
+                             <a href="SuperAdmin_main.jsp">
+                                <i class="ion-ios-speedometer-outline"></i>
+                                信息总览
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="SuperAdmin_upload.jsp"><i class="ion-ios-bell-outline"></i> 后台导入</a>
+                        </li>
+                        <li class="nav-item nav-drawer-header">管理设置</li>
+                        <li class="nav-item">
+                            <a href="showAdminsServlet?user=systemAdmin"><i class="ion-ios-monitor-outline"></i>
+                                管理员设置</a>
+                        </li>
+                        <li class="nav-item nav-item-has-subnav">
+                            <a href="javascript:void(0)"><i class="ion-ios-calculator-outline"></i> 信息管理</a>
+                            <ul class="nav nav-subnav">
+                                <li>
+                                    <a href="All_AcademyMessage_Servlet?user=systemAdmin">学院信息</a>
+                                </li>
+                                <li>
+                                    <a href="All_MajorMessage_Servlet?user=systemAdmin">专业信息</a>
+                                </li>
+                                <li>
+                                    <a href="All_classMessage_Servlet?user=systemAdmin">班级信息</a>
+                                </li>
+                                <li>
+                                    <a href="All_TeaMessage_Servlet?user=systemAdmin">教师信息</a>
+                                </li>
+                                <li>
+                                    <a href="All_StuMessage_Servlet?user=systemAdmin">学生信息</a>
+                                </li>
+                                <li>
+                                    <a href="#">学生成绩信息</a>
+                                </li>
+                                <li>
+                                    <a href="All_teaCourse_Servlet">教师授课信息</a>
+                                </li>
+                                <li>
+                                    <a href="All_stuCourses_Servlet">学生选课信息</a>
+                                </li>
+                                <li>
+                                    <a href="AllCourses_Servlet">所有课程信息</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item nav-drawer-header">打卡统计</li>
+                        <li class="nav-item nav-item-has-subnav">
+                            <a href="javascript:void(0)"><i class="ion-ios-location-outline"></i> 师生健康码统计</a>
+                            <ul class="nav nav-subnav">
+                                <li>
+                                    <a href="All_teaCollectionHealth_Servlet?user=systemAdmin">教师统计</a>
+                                </li>
+                                <li>
+                                    <a href="All_stuCollectionHealth_Servlet?user=systemAdmin">学生统计</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-item-has-subnav">
+                            <a href="javascript:void(0)"><i class="ion-ios-lightbulb-outline"></i> 每日打卡统计</a>
+                            <ul class="nav nav-subnav">
+                                <li>
+                                    <a href="All_TeaHealthServlet?user=systemAdmin">教师统计</a>
+                                </li>
+                                <li>
+                                    <a href="All_StuHealthServlet?user=systemAdmin">学生统计</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                    </ul>
+                </nav>
+                <!-- End drawer navigation -->
+
+                <div class="drawer-footer">
+                    <p class="copyright">Copyright &copy; 2021.ZJUT Web Course Based
+                        <a href="http://www.bootstrapmb.com/">bootstrapmb</a>. 201906150114 马晓峰</p>
+                </div>
+            </div>
+            <!-- End drawer scroll area -->
+        </aside>
+        <!-- End drawer -->
+
+        <!-- Header -->
+        <header class="app-layout-header">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                data-target="#header-navbar-collapse" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <button class="pull-left hidden-lg hidden-md navbar-toggle" type="button"
+                                data-toggle="layout" data-action="sidebar_toggle">
+                            <span class="sr-only">Toggle drawer</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <span class="navbar-page-title">主页</span>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="header-navbar-collapse">
+                        <!-- Header search form -->
+                        <form class="navbar-form navbar-left app-search-form" role="search">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input class="form-control" type="search" id="search-input"
+                                           placeholder="Search..."/>
+                                    <span class="input-group-btn">
+                                            <button class="btn" type="button"><i
+                                                    class="ion-ios-search-strong"></i></button>
+                                        </span>
+                                </div>
+                            </div>
+                        </form>
+
+                        <ul id="main-menu" class="nav navbar-nav navbar-left">
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown">服务中心 <span class="caret"></span></a>
+
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0)">行政办公</a></li>
+                                    <li><a href="javascript:void(0)">外事服务</a></li>
+                                    <li><a href="javascript:void(0)">科学研究</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown">个人中心 <span class="caret"></span></a>
+
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0)">待办事项</a></li>
+                                    <li><a href="javascript:void(0)">待审核事项 <span class="badge">3</span></a></li>
+                                    <li><a href="javascript:void(0)">进行中事项 <span class="badge">5</span></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- .navbar-left -->
+
+                        <ul class="nav navbar-nav navbar-right navbar-toolbar hidden-sm hidden-xs">
+                            <li>
+                                <!-- Opens the modal found at the bottom of the page -->
+                                <a href="javascript:void(0)" data-toggle="modal" data-target="#apps-modal"><i
+                                        class="ion-grid"></i></a>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="javascript:void(0)" data-toggle="dropdown"><i class="ion-ios-bell"></i>
+                                    <span class="badge">3</span></a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li class="dropdown-header">Profile</li>
+                                    <li>
+                                        <a tabindex="-1" href="javascript:void(0)"><span
+                                                class="badge pull-right">3</span> 最新更新 </a>
+                                    </li>
+                                    <li>
+                                        <a tabindex="-1" href="javascript:void(0)"><span
+                                                class="badge pull-right">1</span> 党务消息 </a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">More</li>
+                                    <li>
+                                        <a tabindex="-1" href="javascript:void(0)">系统设置</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown dropdown-profile">
+                                <a href="javascript:void(0)" data-toggle="dropdown">
+                                    <span class="m-r-sm">您好，${tea.getRole()} ${tea.getTea_name()}<span
+                                            class="caret"></span></span>
+                                    <img class="img-avatar img-avatar-48" src="../../App_Themes/bootstrap/assets/img/avatars/avatar3.jpg"
+                                         alt="User profile pic"/>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li class="dropdown-header">
+                                        pages
+                                    </li>
+                                    <li>
+                                        <a href="#">个人设置</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="badge badge-success pull-right">3</span> 博客消息</a>
+                                    </li>
+                                    <li>
+                                        <a href="Login_Administrator.jsp">退出登录</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- .navbar-right -->
+                    </div>
+                </div>
+                <!-- .container-fluid -->
+            </nav>
+            <!-- .navbar-default -->
+        </header>
+        <!-- End header -->
+        <main class="app-layout-content">
+
+            <!-- Page Content -->
+            <div class="container-fluid p-y-md">
+                <!-- Dynamic Table Full -->
+                <div class="card">
+                    <div class="card-header">
+                        <h4>教学班选择</h4>
+                    </div>
+                    <div class="card-block" id="block1">
+                        <div>
+                            <span class="col-md-3"><h4>课程选择</h4></span>
+                            <span class="col-md-2"><h4>教师选择</h4></span>
+                            <span class="col-md-2"><h4>学期</h4></span>
+                            <span class="col-md-4"><h4>学年</h4></span>
+                        </div>
+                        <div>
+                            <form class="form-group" method="post" action="All_showScore_Servlet?course=数据库原理及应用">
+                                <div class="col-md-3">数据库原理及应用</div>
+                                <div class=" col-md-2">
+                                    <select name="teacher">
+                                        <option value="于明远">于明远</option>
+                                        <option value="张三" selected>张三</option>
+                                        <option value="李四">李四</option>
+                                        <option value="王五">王五</option>
+                                    </select>
+                                </div>
+                                <div class=" col-md-2">
+                                    <select name="year">
+                                        <option value=""></option>
+                                        <option value="24-25">2024-2025</option>
+                                        <option value="23-24">2023-2024</option>
+                                        <option value="22-23">2022-2023</option>
+                                        <option value="21-22" selected="selected">2021-2022</option>
+                                        <option value="20-21">2020-2021</option>
+                                        <option value="19-20">2019-2020</option>
+                                        <option value="18-19">2018-2019</option>
+                                        <option value="17-18">2017-2018</option>
+                                        <option value="16-17">2016-2017</option>
+                                        <option value="15-16">2015-2016</option>
+                                    </select>
+                                </div>
+                                <div class=" col-md-1">
+                                    <select name="term">
+                                        <option value=""></option>
+                                        <option value="一" selected="selected">一</option>
+                                        <option value="二">二</option>
+                                        <option value="三">三</option>
+                                    </select>
+                                </div>
+                                <span class="col-sm-offset-1"><input type="submit" class="btn-info" value="选择"></span>
+
+                            </form>
+                        </div>
+                        <div>
+                            <form class="form-group" method="post" action="All_showScore_Servlet?course=软件工程">
+                                <span class="col-md-3">软件工程</span>
+                                <div class=" col-md-2">
+                                    <select name="teacher">
+                                        <option value="于明远" selected>于明远</option>
+                                        <option value="张三">张三</option>
+                                        <option value="李四">李四</option>
+                                        <option value="王五">王五</option>
+                                    </select>
+                                </div>
+                                <div class=" col-md-2">
+                                    <select name="year">
+                                        <option value=""></option>
+                                        <option value="24-25">2024-2025</option>
+                                        <option value="23-24">2023-2024</option>
+                                        <option value="22-23">2022-2023</option>
+                                        <option value="21-22" selected="selected">2021-2022</option>
+                                        <option value="20-21">2020-2021</option>
+                                        <option value="19-20">2019-2020</option>
+                                        <option value="18-19">2018-2019</option>
+                                        <option value="17-18">2017-2018</option>
+                                        <option value="16-17">2016-2017</option>
+                                        <option value="15-16">2015-2016</option>
+                                    </select>
+                                </div>
+                                <div class=" col-md-1">
+                                    <select name="term">
+                                        <option value=""></option>
+                                        <option value="一" selected>一</option>
+                                        <option value="二" selected>二</option>
+                                        <option value="三">三</option>
+                                    </select>
+                                </div>
+                                <span class="col-sm-offset-1"><input type="submit" class="btn-info" value="选择"></span>
+                            </form>
+                        </div>
+                        <div>
+                            <form class="form-group" method="post" action="All_showScore_Servlet?course=计算机组成原理">
+                                <span class="col-md-3">计算机组成原理</span>
+                                <div class=" col-md-2">
+                                    <select name="teacher">
+                                        <option value="于明远">于明远</option>
+                                        <option value="张三">张三</option>
+                                        <option value="李四" selected>李四</option>
+                                        <option value="王五">王五</option>
+                                    </select>
+                                </div>
+                                <div class=" col-md-2">
+                                    <select name="year">
+                                        <option value=""></option>
+                                        <option value="24-25">2024-2025</option>
+                                        <option value="23-24">2023-2024</option>
+                                        <option value="22-23">2022-2023</option>
+                                        <option value="21-22" selected="selected">2021-2022</option>
+                                        <option value="20-21">2020-2021</option>
+                                        <option value="19-20">2019-2020</option>
+                                        <option value="18-19">2018-2019</option>
+                                        <option value="17-18">2017-2018</option>
+                                        <option value="16-17">2016-2017</option>
+                                        <option value="15-16">2015-2016</option>
+                                    </select>
+                                </div>
+                                <div class=" col-md-1">
+                                    <select name="term">
+                                        <option value=""></option>
+                                        <option value="一" selected="selected">一</option>
+                                        <option value="二">二</option>
+                                        <option value="三">三</option>
+                                    </select>
+                                </div>
+                                <span class="col-sm-offset-1"><input type="submit" class="btn-info" value="选择"></span>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- .card-block -->
+                </div>
+                <!-- .card -->
+            </div>
+            <!-- End Page Content -->
+        </main>
+    </div>
+</div>
+
+<div id="apps-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-sm modal-dialog modal-dialog-top">
+        <div class="modal-content">
+            <!-- Apps card -->
+            <div class="card m-b-0">
+                <div class="card-header bg-app bg-inverse">
+                    <h4>Apps</h4>
+                    <ul class="card-actions">
+                        <li>
+                            <button data-dismiss="modal" type="button"><i class="ion-close"></i></button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-block">
+                    <div class="row text-center">
+                        <div class="col-xs-6">
+                            <a class="card card-block m-b-0 bg-app-secondary bg-inverse" href="#">
+                                <i class="ion-speedometer fa-4x"></i>
+                                <p>Admin</p>
+                            </a>
+                        </div>
+                        <div class="col-xs-6">
+                            <a class="card card-block m-b-0 bg-app-tertiary bg-inverse" href="#">
+                                <i class="ion-laptop fa-4x"></i>
+                                <p>Frontend</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- .card-block -->
+            </div>
+            <!-- End Apps card -->
+        </div>
+    </div>
+</div>
+<div class="app-ui-mask-modal"></div>
+
+<!-- JS: jQuery, Bootstrap, slimScroll, scrollLock and App.js -->
+<script src="../../App_Themes/bootstrap/assets/js/core/jquery.min.js"></script>
+<script src="../../App_Themes/bootstrap/assets/js/core/bootstrap.min.js"></script>
+<script src="../../App_Themes/bootstrap/assets/js/core/jquery.slimscroll.min.js"></script>
+<script src="../../App_Themes/bootstrap/assets/js/core/jquery.scrollLock.min.js"></script>
+<script src="../../App_Themes/bootstrap/assets/js/core/jquery.placeholder.min.js"></script>
+<script src="../../App_Themes/bootstrap/assets/js/app.js"></script>
+<script src="../../App_Themes/bootstrap/assets/js/app-custom.js"></script>
+
+<!-- Page Plugins -->
+<script src="../../App_Themes/bootstrap/assets/js/plugins/slick/slick.min.js"></script>
+<script src="../../App_Themes/bootstrap/assets/js/plugins/chartjs/Chart.min.js"></script>
+<script src="../../App_Themes/bootstrap/assets/js/plugins/flot/jquery.flot.min.js"></script>
+<script src="../../App_Themes/bootstrap/assets/js/plugins/flot/jquery.flot.pie.min.js"></script>
+<script src="../../App_Themes/bootstrap/assets/js/plugins/flot/jquery.flot.stack.min.js"></script>
+<script src="../../App_Themes/bootstrap/assets/js/plugins/flot/jquery.flot.resize.min.js"></script>
+
+<!-- Page JS Code -->
+<script src="../../App_Themes/bootstrap/assets/js/pages/index.js"></script>
+<script>
+    $(function () {
+        // Init page helpers (Slick Slider plugin)
+        App.initHelpers('slick');
+    });
+</script>
+<script>
+    var errori = '<%=(String)request.getAttribute("TeaMessageOfChanged")%>';
+    if (errori == 'yes') {
+        alert("修改信息成功");
+    } else if (errori == 'no') {
+        alert("修改信息失败,请稍后重试.");
+    }
+</script>
+</body>
+
+</html>
+

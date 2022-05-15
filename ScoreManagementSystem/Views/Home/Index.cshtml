@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浙江工业大学高校成绩管理数据库系统</title>
+    <meta name="author" content="马晓峰" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Resources/login.css" rel="stylesheet" />
+    <link href="~/Resources/custom.css" rel="stylesheet" />
+</head>
+
+
+<body>
+    <div class="auth_page_wrappers">
+        <img class="mainbg active" src="~/Img/zjut3-1.jpg" alt="">
+        <img class="mainbg" src="~/Img/zjut2-1.jpg" alt="">
+        <img class="mainbg" src="~/Img/zjut1-1.jpg" alt="">
+        <img class="mainbg" src="~/Img/zjut4-1.jpg" alt="">
+        <img class="mainbg" src="~/Img/zjut5-1.jpg" alt="">
+        <div class="auth_login_content">
+            <div class="drxx byzs">
+                <img class="contentbg111" src="~/Img/dlsm.jpg" alt="">
+            </div>
+            <div class="dz_left">
+                <img class="contentbg active" src="~/Img/zjut3.jpg" alt="">
+                <img class="contentbg" src="~/Img/zjut2.jpg" alt="">
+                <img class="contentbg" src="~/Img/zjut1.jpg" alt="">
+                <img class="contentbg" src="~/Img/zjut4.jpg" alt="">
+                <img class="contentbg" src="~/Img/zjut5.jpg" alt="">
+                <img class="logobg" src="~/Img/logo2.png" alt="">
+                <img class="logobg active" src="~/Img/logo2.png" alt="">
+                <div class="dzcirsor">
+                    <span class="active"></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="auth_login_right">
+                <div class="tysfrz">师生登陆界面</div>
+                <div class="auth_tab_content">
+                    <div tabid="01" class="auth_tab_content_item">
+                        <form id="casLoginForm" class="fm-v clearfix form-horizontal" role="form" method="post"
+                              action="/Controllers/HomeController" onsubmit="return loginValiad()">
+                            <p>
+                                <span class="dz_label">学号/工号</span>
+                                <input id="id" name="id" placeholder="职工号/学号" class="auth_input" type="text" value="" />
+                                <span id="idError" style="display:none;" class="auth_error">请输入学号/工号</span>
+                            </p>
+
+                            <p>
+                                <span class="dz_label">密码</span>
+                                <input id="password" name="password" placeholder="请输入密码" class="auth_input" type="password" value=""
+                                       autocomplete="off" />
+                                <span id="passwordError" style="display:none;" class="auth_error">请输入密码</span>
+                            </p>
+                            <p id="cpatchaDiv"></p>
+                            <button type="submit" class="btn btn-default login-btn">登录</button>
+                            <p></p>
+                            <span class="drsm">登录说明</span>
+                            <a id="getBackPasswordMainPage" href="#" class="auth_login_forgetp" target="_blank">
+                                <small>忘记密码?</small>
+                            </a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfloat"></div>
+        <div class="dz_foot">
+            <img id="ewmshow" src="img/weixin.png" alt="">
+            <img id="showremark" src="img/iconi.png" alt="">
+        </div>
+        <div class="bgremark">
+            <p></p>
+        </div>
+        <div class="auth_login_footer">
+            <p class="jiaodiwent">版权信息： © 2021 浙江工业大学 </p>
+        </div>
+    </div>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/js/login-language.js"></script>
+    <script type="text/javascript" src="~/Scripts/js/icheck.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/js/login.js"></script>
+    <script type="text/javascript" src="~/Scripts/js/login-wisedu_v1.0.js"></script>
+    <script type="text/javascript" src="~/Scripts/js/encrypt.js"></script>
+    <script type="text/javascript">
+        //验证用户名
+        function loginValiad() {
+            var id = document.getElementById("id");
+            var password = document.getElementById("password");
+            var chineseReg = /[^\u4E00-\u9FA5]/;
+            var NumReg = /^[0-9_]+$/;
+            if (id.value.length == 0) {
+                alert("用户名不能为空");
+                return false;
+            }
+            if (password.value.length == 0) {
+                alert("密码不能为空");
+                return false;
+            }
+            // if (xuehao.value.length <= 5) {
+            //     alert("用户名不能少于5位!");
+            //     return false;
+            // }
+            // if (password.value.length != 8) {
+            //     alert("密码只有八位!");
+            //     return false;
+            // }
+            // if (NumReg.test(xuehao)) {
+            //     alert("学号只能包含数字!");
+            // }
+        }
+
+    </script>
+    <script>
+        //取出传回来的参数error并与yes比较
+        var errori = '<%=request.getParameter("error")%>';
+        if (errori == 'yes') {
+            alert("登录失败!");
+        }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#qrLogin").click(function () {
+                $('.tysfrz').addClass('NOSHOWW');
+                $('#accountLogin').show();
+                $('#qrLogin').hide();
+
+            });
+            $("#accountLogin").click(function () {
+                $('.tysfrz').removeClass('NOSHOWW');
+                $('#qrLogin').show();
+                $('#accountLogin').hide();
+                $('#qrLogin').removeAttr('style');
+            });
+            $('.drsm').mouseover(function () {
+                $(".dz_left").hide();
+                $('.drxx').removeClass('byzs');
+            }).mouseout(function () {
+                $(".dz_left").show();
+                $('.drxx').addClass('byzs');
+            })
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var text = [{ text: '背景图片为浙江工业大学校区' }, { text: '背景图片为浙江工业大学校区' },
+            { text: '背景图片为浙江工业大学校区' }, { text: '背景图片为浙江工业大学校区' }, { text: '背景图片为浙江工业大学校区' }];
+            var num = 0;
+            $(".bgremark p").eq(0).text(text[0].text);
+            setInterval(function () {
+                num++;
+                if (num > 4) {
+                    num = 0;
+                }
+                if (num == 0) {
+                    $(".logobg").eq(1).addClass('active').siblings('.logobg').removeClass('active');
+                } else {
+                    $(".logobg").eq(0).addClass('active').siblings('.logobg').removeClass('active');
+                }
+                $(".contentbg").eq(num).addClass('active').siblings('.contentbg').removeClass('active');
+                $(".dzcirsor span").eq(num).addClass('active').siblings().removeClass('active');
+                $(".mainbg").eq(num).addClass('active').siblings().removeClass('active');
+                $(".bgremark p").eq(0).text(text[num].text);
+                $(".bgremark p").eq(1).text(text[num].name);
+            }, 10000)
+            $(".dzcirsor span").click(function () {
+                var index = $(this).index();
+                num = index;
+                if (num == 0) {
+                    $(".logobg").eq(1).addClass('active').siblings('.logobg').removeClass('active');
+                } else {
+                    $(".logobg").eq(0).addClass('active').siblings('.logobg').removeClass('active');
+                }
+                $(".contentbg").eq(index).addClass('active').siblings('.contentbg').removeClass('active');
+                $(".dzcirsor span").eq(index).addClass('active').siblings().removeClass('active');
+                $(".mainbg").eq(index).addClass('active').siblings().removeClass('active');
+                $(".bgremark p").eq(0).text(text[num].text);
+                $(".bgremark p").eq(1).text(text[num].name);
+            })
+            $("#ewmshow").mouseover(function () {
+                $(".wxewm").show();
+                //$(this).attr("src","/authserver/custom/images/weixinh.png");
+            }).mouseout(function () {
+                $(".wxewm").hide();
+                //$(this).attr("src","/authserver/custom/images/weixin.png");
+            })
+            $("#showremark").mouseover(function () {
+                $(".bgremark").show();
+                //$(this).attr("src","/authserver/custom/images/iconih.png");
+            }).mouseout(function () {
+                $(".bgremark").hide();
+                //$(this).attr("src","/authserver/custom/images/iconi.png");
+            })
+
+            if (dllt != '' && dllt == 'dynamicLogin') {
+            } else {
+                $("#captchaImg").attr("src", "captcha.html?ts=" + new Date().getMilliseconds());
+            }
+            if (dllt != '' && dllt == 'dynamicLogin') {
+            } else {
+                $("#captchaImg").attr("src", "captcha.html?ts=" + new Date().getMilliseconds());
+            }
+            var service = GetQueryString("service");
+            if (service) {
+                $("#getBackPasswordMainPage").attr("href", "getBackPasswordMainPage.do?service=" + encodeURIComponent(service));
+                $("#loginHelp").attr("href", "loginHelp.do?service=" + encodeURIComponent(service));
+            }
+        });
+    </script>
+</body>
+
+</html>
